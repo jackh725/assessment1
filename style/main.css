@@ -1,0 +1,317 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* 使用现代字体 */
+    background-color: #000;
+    color: #fff;
+}
+
+header {
+    background-color: #000;
+    padding: 20px;
+    border-bottom: 2px solid #444;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFD700; /* 黄色 */
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.intro {
+    padding: 50px 30px;
+}
+
+.intro-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.text h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #FFD700; /* 黄色 */
+}
+
+.text p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #FFD700; /* 黄色 */
+}
+
+.photo {
+    flex: 1;
+    text-align: center;
+    max-width: 400px; /* 限制照片区域的最大宽度 */
+    margin: 0 auto; /* 居中对齐 */
+}
+
+.photo h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #FFD700; /* 黄色 */
+}
+
+.image-container img {
+    width: 100%; /* 确保图片填满容器 */
+    height: auto; /* 保持图片的宽高比例 */
+    max-width: 350px; /* 限制图片的最大宽度 */
+    border-radius: 10px;
+}
+
+/* 视频区域 */
+.video {
+    padding: 30px;
+    text-align: center;
+}
+
+.video h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #FFD700; /* 黄色 */
+}
+
+.video-container video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* 页脚部分 */
+
+footer {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #444;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: #aaa;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 1em;
+  }
+  
+  footer p a {
+    color: #FFD700;
+    text-decoration: none;
+  }
+
+
+footer a {
+    text-decoration: none;
+    color: #FFD700;
+    font-weight: bold;
+}
+
+footer .top-button {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #FFD700;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  footer .top-button:hover {
+    background-color: #FFD700;
+    color: #000;
+    transition: background-color 0.3s ease;
+  }
+
+
+/* 公共样式保持不变，下面是About页面新增 */
+
+.about-container {
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+    color: #fff;
+  }
+  
+  /* 左侧侧边栏 */
+  .sidebar {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 0 0 280px; /* 固定宽度 */
+    text-align: center;
+  }
+  
+  .profile-photo img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    border: 3px;
+    margin-bottom: 20px;
+  }
+  
+  .author-name {
+    color: #FFD700;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar p {
+    margin: 8px 0;
+    font-size: 0.95em;
+  }
+  
+  .sidebar a {
+    color: #FFD700;
+    text-decoration: none;
+  }
+  
+  /* 右侧内容区 */
+  .about-content {
+    flex: 1;
+  }
+  
+  .about-content h1 {
+    color: #FFD700;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+  }
+  
+  .about-content p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  /* What I'm Doing 区域 */
+  .topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .topic {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .topic h3 {
+    color: #FFD700;
+    margin-bottom: 10px;
+  }
+  
+  .topic p {
+    font-size: 0.95em;
+    line-height: 1.5;
+  }
+  
+/* 页面标题 */
+.password-container h1 {
+    text-align: center;
+    color: #FFD700;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+  
+  /* 包含左右两栏的容器 */
+  .content {
+    display: flex;
+    justify-content: center;   /* 水平居中 */
+    align-items: flex-start;   /* 顶部对齐 */
+    gap: 40px;                 /* 左右间距 */
+    max-width: 1000px;         /* 限制容器宽度 */
+    margin: 0 auto;            /* 整个容器居中 */
+  }
+  
+  /* 左侧选项框 */
+  .password-options {
+    flex: 1;
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    text-align: left;
+  }
+  
+  /* 右侧结果框 */
+  #password-list {
+    flex: 1;
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    text-align: left;
+  }
+
+/* 左右两栏标题统一黄色 */
+.password-options h2,
+#password-list h2 {
+  color: #FFD700;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+}
+
+/* 复选框 + label 样式 */
+.options label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.2em;
+  color: #fff;       /* label 字体颜色白色 */
+  margin: 5px 0;
+}
+
+/* checkbox 美化 */
+.options input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #FFD700;   /* 现代浏览器支持：复选框勾选为黄色 */
+  cursor: pointer;
+}
+
+/* 按钮样式 */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #FFD700;
+  border: none;
+  border-radius: 5px;
+  color: #000;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #FFB700;
+}
