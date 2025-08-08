@@ -4,28 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guess Password</title>
-  <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="style/optimized_main.css">
 </head>
-<body class="body-password">
-  <!-- 顶部导航栏 -->
+<body>
+<a id="top"></a> 
   <header>
     <nav>
       <ul>
-        <li><a href="index.html">Work</a></li>
+        <li><a href="index2.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="photos.html">Film/Photos</a></li>
-        <li><a href="guess.html" class="active">Guess Password</a></li>
+        <li><a href="guess.html" class="active">Guess</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- 主体内容 -->
+  
   <main class="password-container">
-    <h1>Guess the Password</h1>
-
+   
     <div class="content">
 
-    <!-- 左侧选项区 -->
+    <!-- left side checkbox to choose from-->
     <section class="password-options">
       <h2>Choose password components:</h2>
       <div class="options">
@@ -37,7 +35,7 @@
       <button id="generate-passwords">Submit</button>
     </section>
 
-    <!-- 右侧结果展示 -->
+    <!-- result showing  -->
     <section id="password-list">
       <h2>Possible Passwords:</h2>
       <ul id="passwords"></ul>
@@ -45,13 +43,13 @@
     </div>
   </main>
 
-  <!-- 页脚 -->
+  
   <footer>
     <a href="#top" class="top-button">Top</a>
     <p>&copy; 2025 Jack Hao. All rights reserved.</p>
   </footer>
 
-  <!-- 引入编译后的JS -->
+ 
   <script src="password.js"></script>
 </body>
 </html>

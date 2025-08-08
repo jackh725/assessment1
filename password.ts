@@ -1,14 +1,14 @@
-// 获取按钮和列表
+// Get the List and Button elements from the DOM
 const generateButton = document.getElementById("generate-passwords") as HTMLButtonElement;
 const passwordList = document.getElementById("passwords") as HTMLUListElement;
 
-// 固定信息
+// Constants for user information
 const userName: string = "Jack";
 const userCity: string = "Bendigo";
 const symbols: string[] = ["!", "@", "#", "$", "%", "&"];
 const numbers: string = "0123456789";
 
-// 生成随机符号（最多3位）
+// generate random symnbols(Max 3 )
 function getRandomSymbols(): string {
   let result = "";
   for (let i = 0; i < Math.floor(Math.random() * 3) + 1; i++) {
@@ -18,7 +18,7 @@ function getRandomSymbols(): string {
   return result;
 }
 
-// 生成随机数字（最多3位）
+// genrate random numbers(Max 3)
 function getRandomNumbers(): string {
   let result = "";
   for (let i = 0; i < Math.floor(Math.random() * 3) + 1; i++) {
@@ -28,7 +28,7 @@ function getRandomNumbers(): string {
   return result;
 }
 
-// 点击生成密码
+// Genrate passwords based on user selections
 generateButton?.addEventListener("click", () => {
   const useName = (document.getElementById("use-name") as HTMLInputElement).checked;
   const useCity = (document.getElementById("use-city") as HTMLInputElement).checked;
@@ -56,10 +56,10 @@ generateButton?.addEventListener("click", () => {
     passwords.push(userCity + getRandomNumbers());
   }
 
-  // 清空旧结果
+  // Clear previous results
   passwordList.innerHTML = "";
 
-  // 显示新结果
+  // Show generated passwords
   passwords.forEach(pwd => {
     const li = document.createElement("li");
     li.textContent = pwd;
