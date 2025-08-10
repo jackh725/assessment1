@@ -5,23 +5,23 @@ const passwordList = document.getElementById("passwords") as HTMLUListElement;
 // Constants for user information
 const userName: string = "Jack";
 const userCity: string = "Bendigo";
-const symbols: string[] = ["!", "@", "#", "$", "%", "&"];
+const symbols: string[] = ["!", "@", "#", "$", "%", "&","*","+","-"];
 const numbers: string = "0123456789";
 
-// generate random symnbols(Max 3 )
+// generate random symnbols( Max add 5 symbols)
 function getRandomSymbols(): string {
   let result = "";
-  for (let i = 0; i < Math.floor(Math.random() * 3) + 1; i++) {
+  for (let i = 0; i < Math.floor(Math.random() * 5) + 1; i++) {
     const randomIndex = Math.floor(Math.random() * symbols.length);
     result += symbols[randomIndex];
   }
   return result;
 }
 
-// genrate random numbers(Max 3)
+// genrate random numbers(Max 5)
 function getRandomNumbers(): string {
   let result = "";
-  for (let i = 0; i < Math.floor(Math.random() * 3) + 1; i++) {
+  for (let i = 0; i < Math.floor(Math.random() * 5) + 1; i++) {
     const randomIndex = Math.floor(Math.random() * numbers.length);
     result += numbers[randomIndex];
   }
@@ -47,22 +47,48 @@ generateButton?.addEventListener("click", () => {
     passwords.push(userName + userCity);
     passwords.push(userCity + userName);
   }
+  // if (useSymbols) {
+  //   passwords.push(userName + getRandomSymbols());
+  //   passwords.push(userCity + getRandomSymbols());
+  // }
   if (useSymbols) {
-    passwords.push(userName + getRandomSymbols());
-    passwords.push(userCity + getRandomSymbols());
+    if (useName) {
+      passwords.push(userName + getRandomSymbols());
+    }
+    if (useCity) {
+      passwords.push(userCity + getRandomSymbols());
+    }
   }
+
+  // if (useNumbers) {
+  //   passwords.push(userName + getRandomNumbers());
+  //   passwords.push(userCity + getRandomNumbers());
+  // }
+
   if (useNumbers) {
-    passwords.push(userName + getRandomNumbers());
-    passwords.push(userCity + getRandomNumbers());
+    if (useName) {
+      passwords.push(userName + getRandomNumbers());
+    }
+    if (useCity) {
+      passwords.push(userCity + getRandomNumbers());
+    }
   }
+
 
   // Clear previous results
   passwordList.innerHTML = "";
 
-  // Show generated passwords
-  passwords.forEach(pwd => {
+  const filteredPasswords = passwords.filter(pwd => pwd.length <= 14);
+
+  filteredPasswords.forEach(pwd => {
     const li = document.createElement("li");
     li.textContent = pwd;
     passwordList.appendChild(li);
   });
+  // Show generated passwords
+  // passwords.forEach(pwd => {
+  //   const li = document.createElement("li");
+  //   li.textContent = pwd;
+  //   passwordList.appendChild(li);
+  // });
 });
