@@ -25,9 +25,9 @@
       <div class="profile-photo">
         <img src="assets/images/award.png" alt="Jack's Photo">
       </div>
-      <h2 class="author-name">Jack Hao</h2>
+      <h2 class="author-name" id="my-name">Jack Hao</h2>
       <p>Email: <a href="mailto:jackhaoinau2@gmail.com">jackhaoinau2@gmail.com</a></p>
-      <p>Location: Bendigo, VIC, Australia</p>
+      <p id="my-city">Bendigo</p>
     </aside>
 
     
@@ -63,5 +63,18 @@
     <p>&copy; 2025 Jack Hao. All rights reserved.</p>
     <p>Date created: 3 Aug, 2025</p>
 </footer>
+
+<!-- Script to store name and city in localStorage -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const name = document.getElementById("my-name")?.textContent?.trim() || "";
+      const city = document.getElementById("my-city")?.textContent?.trim() || "";
+
+      // Store name and city in localStorage
+      localStorage.setItem("profile_name", name);
+      localStorage.setItem("profile_city", city);
+    });
+  </script>
+  
 </body>
 </html>
